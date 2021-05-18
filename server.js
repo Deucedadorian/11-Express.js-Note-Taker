@@ -29,6 +29,7 @@ app.post('/api/notes', (req, res) => {
     const newNote = req.body;
 
     newNote.id = nanoid();
+    console.log(newNote);
     res.json(newNote);
 });
 
