@@ -10,7 +10,7 @@ const db = require('./db.json');
 // Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+ 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -35,6 +35,18 @@ app.post('/api/notes', (req, res) => {
     newNote.id = nanoid();
     db.push(newNote);
     res.json(newNote);
+    writeFile('db.json', JSON.stringify(db));
+});
+
+app.delete(`/api/notes/:id`, (req, res) => {
+    const chosen = req.params.id;
+    for (note of db) {
+        if (chosen === note.id) {
+            db.splice(note, 1);
+            writeFile('db.json', JSON.stringify(db));
+            res.json(db);
+        };
+    };
 });
 
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`));
