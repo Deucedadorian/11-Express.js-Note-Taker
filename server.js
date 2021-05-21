@@ -31,7 +31,6 @@ app.get('/api/notes', (req, res) => res.json(db));
 // Receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client
 app.post('/api/notes', (req, res) => {
     const newNote = req.body;
-
     newNote.id = nanoid();
     db.push(newNote);
     res.json(newNote);
