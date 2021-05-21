@@ -31,9 +31,9 @@ you will be presented with a page with existing notes listed in the left-hand co
 
 ## Screenshots
 
-![Screenshot of deployed app](public\assets\images\sheltered-cliffs-13242.herokuapp.com_.png)
+![Screenshot of deployed app](./images/sheltered-cliffs-13242.herokuapp.com_.png)
 
-![Screenshot of deployed app](public\assets\images\sheltered-cliffs-13242.herokuapp.com_notes.png)
+![Screenshot of deployed app](./images/sheltered-cliffs-13242.herokuapp.com_notes.png)
 
 ## Contact
 
